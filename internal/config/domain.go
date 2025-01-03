@@ -61,8 +61,20 @@ func roundRobin() func() string {
 		// "trymeout.com",
 	}
 
-	for i := 0; i < 1_00; i++ {
+	for i := 0; i < 10; i++ {
 		domains = append(domains, fmt.Sprintf(`https://webhook.site/%s`, uuid.New()))
+	}
+
+	for i := 0; i < 50; i++ {
+		domains = append(domains, fmt.Sprintf(`https://jsonplaceholder.typicode.com/comments/%d`, i))
+	}
+
+	for i := 0; i < 50; i++ {
+		domains = append(domains, "https://random-data-api.com/api/users/random_user")
+	}
+
+	for i := 0; i < 50; i++ {
+		domains = append(domains, `https://randomuser.me/api/`)
 	}
 
 	index := 0 // Initial index
