@@ -12,7 +12,7 @@ func CreateExample() {
 	writer := GetKafkaWriter()
 	defer writer.Close()
 
-	const LIMIT = 1000
+	const LIMIT = 1_000_000
 
 	var messagesArray [LIMIT]kafka.Message
 	nextDomain := roundRobin()
