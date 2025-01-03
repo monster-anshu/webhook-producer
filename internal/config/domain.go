@@ -1,59 +1,74 @@
 package config
 
+import (
+	"fmt"
+	"os"
+
+	"github.com/google/uuid"
+)
+
 func roundRobin() func() string {
 
 	domains := []string{
-		"example.com",
-		"example.org",
-		"example.net",
-		"test.com",
-		"mytestsite.com",
-		"demo.com",
-		"dummy.com",
-		"testsite.com",
-		"placeholder.com",
-		"sampledomain.com",
-		"testing123.com",
-		"tryme.com",
-		"mocksite.com",
-		"fakesite.com",
-		"mywebsite.com",
-		"newdomain.com",
-		"demoexample.com",
-		"sandbox.com",
-		"tryouts.com",
-		"testingground.com",
-		"experimentsite.com",
-		"trialdomain.com",
-		"stagingarea.com",
-		"localtest.me",
-		"devtestsite.com",
-		"faketest.com",
-		"trydomain.com",
-		"betaexample.com",
-		"testzone.com",
-		"experiments.com",
-		"unittest.com",
-		"examplenetwork.com",
-		"testwebpage.com",
-		"webtest.com",
-		"domainplaceholder.com",
-		"practicepage.com",
-		"apitesting.com",
-		"webappdemo.com",
-		"devtools.com",
-		"testlink.com",
-		"apitestsite.com",
-		"localhost.com",
-		"trialwebsite.com",
-		"exampleserver.com",
-		"testwebserver.com",
-		"trialrun.com",
-		"openwebtest.com",
-		"thedomain.com",
-		"mockexample.com",
-		"trymeout.com",
+		// "example.com",
+		// "example.org",
+		// "example.net",
+		// "test.com",
+		// "mytestsite.com",
+		// "demo.com",
+		// "dummy.com",
+		// "testsite.com",
+		// "placeholder.com",
+		// "sampledomain.com",
+		// "testing123.com",
+		// "tryme.com",
+		// "mocksite.com",
+		// "fakesite.com",
+		// "mywebsite.com",
+		// "newdomain.com",
+		// "demoexample.com",
+		// "sandbox.com",
+		// "tryouts.com",
+		// "testingground.com",
+		// "experimentsite.com",
+		// "trialdomain.com",
+		// "stagingarea.com",
+		// "localtest.me",
+		// "devtestsite.com",
+		// "faketest.com",
+		// "trydomain.com",
+		// "betaexample.com",
+		// "testzone.com",
+		// "experiments.com",
+		// "unittest.com",
+		// "examplenetwork.com",
+		// "testwebpage.com",
+		// "webtest.com",
+		// "domainplaceholder.com",
+		// "practicepage.com",
+		// "apitesting.com",
+		// "webappdemo.com",
+		// "devtools.com",
+		// "testlink.com",
+		// "apitestsite.com",
+		// "localhost.com",
+		// "trialwebsite.com",
+		// "exampleserver.com",
+		// "testwebserver.com",
+		// "trialrun.com",
+		// "openwebtest.com",
+		// "thedomain.com",
+		// "mockexample.com",
+		// "trymeout.com",
 	}
+
+	for i := 0; i < 1_00; i++ {
+		domains = append(domains, fmt.Sprintf(`https://webhook.site/%s`, uuid.New()))
+	}
+
+	fmt.Println("After:", domains)
+
+	os.Exit(0)
 
 	index := 0 // Initial index
 	n := len(domains)
