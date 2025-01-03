@@ -2,7 +2,6 @@ package config
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/google/uuid"
 )
@@ -65,10 +64,6 @@ func roundRobin() func() string {
 	for i := 0; i < 1_00; i++ {
 		domains = append(domains, fmt.Sprintf(`https://webhook.site/%s`, uuid.New()))
 	}
-
-	fmt.Println("After:", domains)
-
-	os.Exit(0)
 
 	index := 0 // Initial index
 	n := len(domains)
