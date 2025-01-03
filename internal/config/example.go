@@ -53,7 +53,7 @@ func CreateExample() {
 			nextDomain(),
 		)
 		messagesArray[i] = kafka.Message{
-			Key:   []byte("key"),
+			// Key:   []byte("key"),
 			Value: []byte(testMessage),
 			Topic: "webhook",
 		}
