@@ -25,7 +25,7 @@ func CreateExample() {
             "sip_d": "192.168.1.1",
             "s_wid": 1512,
             "url": "%s",
-            "hm": "POST",
+            "hm": "GET",
             "hdr": {
                 "api_token": "12345678",
                 "content-type": "application/json"
