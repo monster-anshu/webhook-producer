@@ -16,20 +16,8 @@ func roundRobin() func() string {
 		"https://webhook.site/46ed42ca-d817-4877-8d67-218bb11df92a",
 	}
 
-	for i := 0; i < 10; i++ {
-		domains = append(domains, fmt.Sprintf(`https://webhook.site/%s`, uuid.New()))
-	}
-
-	for i := 0; i < 50; i++ {
-		domains = append(domains, fmt.Sprintf(`https://jsonplaceholder.typicode.com/comments/%d`, i))
-	}
-
-	for i := 0; i < 50; i++ {
-		domains = append(domains, "https://random-data-api.com/api/users/random_user")
-	}
-
-	for i := 0; i < 50; i++ {
-		domains = append(domains, `https://randomuser.me/api/`)
+	for i := 0; i < 1000; i++ {
+		domains = append(domains, fmt.Sprintf(`http://%s.acefone.himanshu-gunwant.com:3000`, uuid.New()))
 	}
 
 	index := 0 // Initial index
