@@ -3,6 +3,7 @@ package config
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"github.com/segmentio/kafka-go"
 )
@@ -55,7 +56,7 @@ func CreateExample() {
 		messagesArray[i] = kafka.Message{
 			// Key:   []byte("key"),
 			Value: []byte(testMessage),
-			Topic: "webhook",
+			Topic: os.Getenv("KAFKA_CONSUMER_TOPIC"),
 		}
 	}
 
