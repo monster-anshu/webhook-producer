@@ -17,7 +17,7 @@ func roundRobin() func() string {
 	}
 
 	for i := 0; i < 1000; i++ {
-		domains = append(domains, fmt.Sprintf(`http://%s.acefone.himanshu-gunwant.com:3000`, uuid.New()))
+		domains = append(domains, fmt.Sprintf(`http://%s.acefone.himanshu-gunwant.com:3000`, uuid.New().String()[0:3]))
 	}
 
 	index := 0 // Initial index

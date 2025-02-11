@@ -13,7 +13,7 @@ func CreateExample() {
 	writer := GetKafkaWriter()
 	defer writer.Close()
 
-	const LIMIT = 1_000_000
+	const LIMIT = 10
 
 	var messagesArray [LIMIT]kafka.Message
 	nextDomain := roundRobin()
@@ -54,7 +54,7 @@ func CreateExample() {
 			nextDomain(),
 		)
 		messagesArray[i] = kafka.Message{
-			// Key:   []byte("key"),
+			Key:   []byte("Test"),
 			Value: []byte(testMessage),
 			Topic: os.Getenv("KAFKA_CONSUMER_TOPIC"),
 		}
