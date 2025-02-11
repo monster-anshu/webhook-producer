@@ -20,37 +20,43 @@ func CreateExample() {
 
 	for i := 0; i < LIMIT; i++ {
 		testMessage := fmt.Sprintf(`{
-            "u_id": 4663,
-            "c_id": "1728556244.450",
-            "ac": "6707acd467af5",
-            "sip_d": "192.168.1.1",
-            "s_wid": 1512,
+            "hm": "POST",
             "url": "%s",
-            "hm": "GET",
             "hdr": {
-                "api_token": "12345678",
+                "authorization": "auth",
                 "content-type": "application/json"
             },
-            "w_type": 0,
-            "re": 0,
+            "u_id": 4663,
+            "s_wid": 69,
+            "w_type": 2,
             "cid_num": "7505064723",
-            "call_num": "+911244637984",
+            "call_num": "7505064723",
+            "re": 0,
+            "ac": "67aaf83f245de",
+            "c_id": "1739257917.28918",
+            "ch": "clicktocall",
+            "sip_d": "10.104.80.167",
+            "ct": "2025-02-11T07:11:57Z",
             "pyld": {
-                "uuid": "6707acd467af5",
-                "call_to_number": "+911244637984",
-                "caller_id_number": "7505064723",
-                "start_stamp": "2024-10-10 16:00:44",
-                "call_id": "1728556244.450",
+                "uuid": "67aaf83f245de",
+                "call_to_number": "918580993919",
+                "caller_id_number": "+919240251731",
+                "start_stamp": "2025-02-11 12:41:57",
+                "answer_agent_number": "+911000001039",
+                "call_id": "1739257917.28918",
                 "billing_circle": {
-                    "operator": "Reliance Mobile GSM",
-                    "circle": "UP (East)"
+                    "operator": "BSNL/MTNL - Central Gov.",
+                    "circle": "Bihar & Jharkhand"
                 },
-                "customer_no_with_prefix ": "+917505064723"
+                "call_status": "Answered by agent",
+                "direction": "click_to_call",
+                "customer_no_with_prefix ": "918580993919",
+                "async": 1,
+                "get_call_id": 1,
+                "custom_identifier": "3dd5c548-3df5-4ea4-a1f4-f44a275958dd"
             },
-            "meta": {},
-            "ch": "inbound",
             "partition": 0
-        }`,
+            }`,
 			nextDomain(),
 		)
 		messagesArray[i] = kafka.Message{
